@@ -1,0 +1,33 @@
+﻿{
+  "Jobs": [
+    {
+      "Name": "FirstJob",
+      "Group": "Default",
+      "Type": "MyQuartz.Client.Jobs.FirstJob",
+      "Trigger": "FirstTrigger"
+    },
+    {
+      "Name": "SecondJob",
+      "Group": "Default",
+      "Type": "MyQuartz.Client.Jobs.SecondJob",
+      "Trigger": "SecondTrigger"
+    }
+
+  ],
+  "Triggers": [
+    {
+      "Name": "FirstTrigger",
+      "Group": "Default",
+      "CronExpression": "0/5 * * * * ? *",
+      "StartTime": null,
+      "EndTime": null
+    },
+    {
+      "Name": "SecondTrigger",
+      "Group": "Default",
+      "CronExpression": "0/20 * * * * ? *",
+      "StartTime": null,
+      "EndTime": null
+    }
+  ]
+}
