@@ -14,7 +14,11 @@ namespace MyQuartz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(DateTime.Now.ToString("r"));
+            if(TaskConfig.Instance==null)
+            {
+                string s = "";
+            }
+            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             //第一步：通过调度工厂创建一个作业调度池
             ISchedulerFactory schedulerFactory = new StdSchedulerFactory();
             IScheduler scheduler = schedulerFactory.GetScheduler();
@@ -34,7 +38,7 @@ namespace MyQuartz
             scheduler.ScheduleJob(jobDetail, trigger);
             //第五步：开始执行
             scheduler.Start();
-            Thread.Sleep(30000);
+            Thread.Sleep(300000);
             //结束
             scheduler.Shutdown();
             Console.ReadKey();
