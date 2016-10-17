@@ -55,8 +55,9 @@ namespace MyQuartz.Core
         }
         #endregion
 
-        #region 创建Job
-
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public static void Init()
         {
             try
@@ -69,7 +70,6 @@ namespace MyQuartz.Core
                         IJobDetail jobDetail = CreateJob(item, types);
                         ICronTrigger trigger = CreateCronTrigger(TaskConfig.Instance.Triggers.Where(a => a.Name == item.Trigger).FirstOrDefault());
                         Scheduler.ScheduleJob(jobDetail, trigger);
-                        Scheduler.Start();
                     }
                 }
                 else
@@ -82,16 +82,17 @@ namespace MyQuartz.Core
                 throw ex;
             }
         }
+        /// <summary>
+        /// 创建Job
+        /// </summary>
+        /// <param name="jobItem"></param>
+        /// <param name="types"></param>
+        /// <returns></returns>
         public static IJobDetail CreateJob(JobItem jobItem, Type[] types)
         {
             JobDetailImpl job = new JobDetailImpl(jobItem.Name, types.Where(t => t.FullName == jobItem.Type).FirstOrDefault());
             return job;
         }
-
-
-        #endregion
-
-        #region 创建Trigger
         /// <summary>
         /// 创建CronTrigger
         /// </summary>
@@ -114,9 +115,5 @@ namespace MyQuartz.Core
                 .Build();
             return trigger;
         }
-        #endregion
-
-
-
     }
 }
