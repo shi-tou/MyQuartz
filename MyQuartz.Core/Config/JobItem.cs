@@ -27,5 +27,9 @@ namespace MyQuartz.Core.Config
         /// 触发器
         /// </summary>
         public string Trigger { get; set; }
+        /// <summary>
+        /// 是否启用
+        /// </summary>
+        public bool Enabled { get; set; }
     }
 }

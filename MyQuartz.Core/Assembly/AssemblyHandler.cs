@@ -14,7 +14,7 @@ namespace MyQuartz.Core
     public class AssemblyHandler
     {
         /// <summary>  
-        /// 获取程序集中的继承了IJob接口的类
+        /// 反射获取程序集中的继承了IJob接口的类
         /// </summary>  
         /// <param name="assemblyName">程序集</param>  
         public static Type[] GetJobClass()

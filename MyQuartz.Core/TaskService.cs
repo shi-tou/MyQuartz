@@ -67,10 +67,14 @@ namespace MyQuartz.Core
                     Type[] types = AssemblyHandler.GetJobClass();
                     foreach (JobItem item in TaskConfig.Instance.Jobs)
                     {
-                        IJobDetail jobDetail = CreateJob(item, types);
-                        ICronTrigger trigger = CreateCronTrigger(TaskConfig.Instance.Triggers.Where(a => a.Name == item.Trigger).FirstOrDefault());
-                        Scheduler.ScheduleJob(jobDetail, trigger);
+                        if (item.Enabled)
+                        {
+                            IJobDetail jobDetail = CreateJob(item, types);
+                            ICronTrigger trigger = CreateCronTrigger(TaskConfig.Instance.Triggers.Where(a => a.Name == item.Trigger).FirstOrDefault());
+                            Scheduler.ScheduleJob(jobDetail, trigger);
+                        }
                     }
+                    Start();
                 }
                 else
                 {

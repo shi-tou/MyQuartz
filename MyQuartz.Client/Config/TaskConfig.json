@@ -1,19 +1,28 @@
 ﻿{
+  //任务
   "Jobs": [
     {
+      //任务名
       "Name": "FirstJob",
+      //分组
       "Group": "Default",
+      //任务类型(全限定名)
       "Type": "MyQuartz.Client.Jobs.FirstJob",
-      "Trigger": "FirstTrigger"
+      //指定Triggers中配置触发器名称
+      "Trigger": "FirstTrigger",
+      //是否启用
+      "Enabled": true
     },
     {
       "Name": "SecondJob",
       "Group": "Default",
       "Type": "MyQuartz.Client.Jobs.SecondJob",
-      "Trigger": "SecondTrigger"
+      "Trigger": "SecondTrigger",
+      "Enabled": false
     }
 
   ],
+  //触发器
   "Triggers": [
     {
       "Name": "FirstTrigger",

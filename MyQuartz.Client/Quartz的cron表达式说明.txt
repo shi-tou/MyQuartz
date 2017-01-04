@@ -1,4 +1,5 @@
-﻿    官方英文介绍地址:http://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/crontrigger.html
+﻿    
+	官方英文介绍地址:http://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/crontrigger.html
     
     由7段构成：秒 分 时 日 月 星期 年（可选）
     "-" ：表示范围 MON-WED表示星期一到星期三
