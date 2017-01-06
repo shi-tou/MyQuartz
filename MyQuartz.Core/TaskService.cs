@@ -13,7 +13,6 @@ namespace MyQuartz.Core
     /// </summary>
     public class TaskService
     {
-
         /// <summary>
         /// 作业调度池
         /// </summary>
