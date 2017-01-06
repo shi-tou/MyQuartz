@@ -1,4 +1,4 @@
-﻿# MyQuartz
+# MyQuartz
 基于Quartz.Net的任务调度管理系统
 #Quartz.Net简单使用的5个步骤
 
