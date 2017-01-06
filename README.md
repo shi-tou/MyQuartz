@@ -2,10 +2,10 @@
 基于Quartz.Net的任务调度管理系统
 #Quartz.Net简单使用的5个步骤
 
-class Program\n
-{
-    static void Main(string[] args)
-    {
+class Program<br>
+{<br>
+    static void Main(string[] args)<br>
+    {<br>
         Console.WriteLine(DateTime.Now.ToString("r"));
         //第一步：通过调度工厂创建一个作业调度池
         ISchedulerFactory schedulerFactory = new StdSchedulerFactory();
